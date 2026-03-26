@@ -1,8 +1,9 @@
 using System;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.IO;
 using System.Text;
 using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
@@ -29,7 +30,7 @@ namespace Tailwind.Traders.Web.Standalone
             services.AddScoped<SqlConnection>(
                 _ => new SqlConnection(config["SqlConnectionString"]));
 
-            var telemetryClient = new TelemetryClient();
+            var telemetryClient = new TelemetryClient(TelemetryConfiguration.CreateDefault());
             var mongoConnectionString = config["MongoConnectionString"] ?? "mongodb://localhost:27017";
             var mongoClientSettings = MongoClientSettings.FromConnectionString(mongoConnectionString);
             mongoClientSettings.ClusterConfigurator = cc =>

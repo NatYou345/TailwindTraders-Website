@@ -11,7 +11,6 @@ using System.Runtime.Serialization;
 using Microsoft.Extensions.Logging;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Specialized;
-using SixLabors.Primitives;
 
 namespace Tailwind.Traders.Web.Standalone.Services
 {
@@ -38,8 +37,7 @@ namespace Tailwind.Traders.Web.Standalone.Services
         async Task<string> IImageSearchTermPredictor.PredictSearchTerm(Stream imageStream)
         {
             var eventId = new EventId();
-            IImageFormat imageFormat;
-            var image = Image.Load(imageStream, out imageFormat);
+            var image = Image.Load(imageStream);
 
             // resize image constraining it to 500px in any dimension
             var resizedImage = image.Clone(
