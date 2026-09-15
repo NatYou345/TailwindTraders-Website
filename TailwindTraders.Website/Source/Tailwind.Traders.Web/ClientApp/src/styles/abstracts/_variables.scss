@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "sass:math";
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
@@ -7,10 +9,10 @@
 //
 // #Base-Color
 $color-base: #000000;
-$color-base-darker: lighten($color-base, 20);
-$color-base-dark: lighten($color-base, 40);
-$color-base-light: lighten($color-base, 60);
-$color-base-lighter: lighten($color-base, 80);
+$color-base-darker: color.adjust($color-base, $lightness: 20%);
+$color-base-dark: color.adjust($color-base, $lightness: 40%);
+$color-base-light: color.adjust($color-base, $lightness: 60%);
+$color-base-lighter: color.adjust($color-base, $lightness: 80%);
 
 // #Brand-Palette
 $color-primary: #2f4b66;
@@ -145,9 +147,9 @@ $checkbox-size: 1.5rem;
 $container-width-xl: 76.5rem;
 
 $space-default: $font-base; // Is dependant on $font-base and should be 1em;
-$space-xxs: $space-default / 8; // 2px
-$space-xs: $space-default / 4; // 4px
-$space-s: $space-default / 2; // 8px
+$space-xxs: math.div($space-default, 8); // 2px
+$space-xs: math.div($space-default, 4); // 4px
+$space-s: math.div($space-default, 2); // 8px
 $space-m: $space-default; // 16px
 $space-l: $space-default * 2; // 32px
 $space-xl: $space-default * 4; // 64px

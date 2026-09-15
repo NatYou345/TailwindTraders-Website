@@ -1,71 +1,75 @@
+@use "sass:color";
+@use "../abstracts/mixins/font-placeholders";
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component of the site/application.
 // -----------------------------------------------------------------------------
 .btn {
     align-items: center;
     border: none;
-    border-radius: $padding-m * 2;
+    border-radius: variables.$padding-m * 2;
     display: flex;
-    font-weight: $font-weight-medium;
+    font-weight: variables.$font-weight-medium;
     justify-content: center;
     max-height: 4rem;
     max-width: 18.5rem;
-    padding: $padding-m;
+    padding: variables.$padding-m;
     text-align: center;
     text-decoration: none;
-    transition: background-color $animation-speed-fast $animation-type-regular, color $animation-speed-fast $animation-type-regular;
+    transition: background-color variables.$animation-speed-fast variables.$animation-type-regular, color variables.$animation-speed-fast variables.$animation-type-regular;
     white-space: nowrap;
 
-    @include text-s();
+    @include font-placeholders.text-s();
 
     &--primary {
-        background-color: $color-background-accent-tertiary;
-        color: $color-text-light;
+        background-color: variables.$color-background-accent-tertiary;
+        color: variables.$color-text-light;
         text-transform: uppercase;
 
         &:hover {
-            background-color: $color-background-accent-tertiary-hover;
+            background-color: variables.$color-background-accent-tertiary-hover;
         }
     }
 
     &--secondary {
-        background-color: $color-background-light;
-        box-shadow: $box-shadow-s;
-        color: $color-text-primary;
+        background-color: variables.$color-background-light;
+        box-shadow: variables.$box-shadow-s;
+        color: variables.$color-text-primary;
 
         &:hover {
-            color: $color-text-tertiary;
+            color: variables.$color-text-tertiary;
         }
 
         &:hover svg {
-            fill: $color-svg-tertiary;
+            fill: variables.$color-svg-tertiary;
         }
 
         &:active {
-            box-shadow: $box-shadow-xs;
-            color: $color-text-secondary;
+            box-shadow: variables.$box-shadow-xs;
+            color: variables.$color-text-secondary;
         }
 
         > svg {
-            margin-right: $margin-s;
-            fill: $color-svg-primary;
+            margin-right: variables.$margin-s;
+            fill: variables.$color-svg-primary;
         }
     }
 
     &--getapp {
         display: block;
-        background-color: $color-background-light;
-        box-shadow: $box-shadow-s;
-        color: $color-text-primary;
+        background-color: variables.$color-background-light;
+        box-shadow: variables.$box-shadow-s;
+        color: variables.$color-text-primary;
         padding: 0.5rem;
         width: 150px;
         line-height: 100%;
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             width: 170px;
         }
 
-        @media (min-width: $mq-l) {
+        @media (min-width: variables.$mq-l) {
             width: 192px;
         }
 
@@ -79,26 +83,26 @@
     }
 
     &--microsoft {
-        background-color: $color-background-microsoft;
-        color: $color-text-light;
+        background-color: variables.$color-background-microsoft;
+        color: variables.$color-text-light;
 
         &:hover {
-            background-color: darken($color-background-microsoft, 10%);
+            background-color: color.adjust(variables.$color-background-microsoft, $lightness: -10%);
         }
     }
 
     &--float {
-        bottom: $space-l;
+        bottom: variables.$space-l;
         left: 50%;
         position: fixed;
         transform: translateX(-50%) translateZ(0);
         will-change: transform;
-        z-index: $z-index-s;
+        z-index: variables.$z-index-s;
     }
 
     &.is-disabled {
-        background-color: $color-background-medium;
+        background-color: variables.$color-background-medium;
         box-shadow: initial;
-        color: $color-grey-dark;
+        color: variables.$color-grey-dark;
     }
 }

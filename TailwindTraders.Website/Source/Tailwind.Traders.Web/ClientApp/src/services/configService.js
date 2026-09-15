@@ -1,14 +1,12 @@
 import axios from "axios";
-
-require("dotenv").config();
 const settingsUrl = "/api/settings";
 
-const APIUrl = process.env.REACT_APP_DEV_API_URL;
-const APIUrlShoppingCart = process.env.REACT_APP_API_URL_SHOPPINGCART;
-const UseB2C = process.env.REACT_APP_USEB2C;
-const B2cAuthority = process.env.REACT_APP_B2CAUTHORITY;
-const B2cClientId = process.env.REACT_APP_B2CCLIENTID;
-const B2cScopes = process.env.REACT_APP_B2CSCOPES;
+const APIUrl = import.meta.env.REACT_APP_DEV_API_URL;
+const APIUrlShoppingCart = import.meta.env.REACT_APP_API_URL_SHOPPINGCART;
+const UseB2C = import.meta.env.REACT_APP_USEB2C;
+const B2cAuthority = import.meta.env.REACT_APP_B2CAUTHORITY;
+const B2cClientId = import.meta.env.REACT_APP_B2CCLIENTID;
+const B2cScopes = import.meta.env.REACT_APP_B2CSCOPES;
 
 const _HeadersConfig = (token, devspaces = undefined) => {
   const headers = token ? { Authorization: `Bearer ${token}` } : {};

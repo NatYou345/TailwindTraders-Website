@@ -1,52 +1,46 @@
 // 1. Configuration and helpers
-@import
-    'styles/abstracts/variables',
-    'styles/abstracts/mixins/ellipsis',
-    'styles/abstracts/mixins/fonts',
-    'styles/abstracts/mixins/font-scale',
-    'styles/abstracts/mixins/font-placeholders',
-    'styles/abstracts/mixins/loader';
+@use 'styles/abstracts/variables';
+@use 'styles/abstracts/mixins/ellipsis';
+@use 'styles/abstracts/mixins/fonts';
+@use 'styles/abstracts/mixins/font-scale';
+@use 'styles/abstracts/mixins/font-placeholders';
+@use 'styles/abstracts/mixins/loader';
 
 // 2. Vendors
-@import
-    'styles/vendor/normalize';
+@use 'styles/vendor/normalize';
 
 // 3. Base stuff
-@import
-    'styles/base/base',
-    'styles/base/fonts',
-    'styles/base/typography',
-    'styles/base/utilities';
+@use 'styles/base/base';
+@use 'styles/base/fonts' as fonts2;
+@use 'styles/base/typography';
+@use 'styles/base/utilities';
 
 // 4. Layout-related sections
-@import
-    'styles/layout/header',
-    'styles/layout/hero',
-    'styles/layout/recommend',
-    'styles/layout/getapp',
-    'styles/layout/featured',
-    'styles/layout/footer';
+@use 'styles/layout/header';
+@use 'styles/layout/hero';
+@use 'styles/layout/recommend';
+@use 'styles/layout/getapp';
+@use 'styles/layout/featured';
+@use 'styles/layout/footer';
 
 
 // 5. Components
-@import
-    'styles/components/loading-spinner',
-    'styles/components/btn',
-    'styles/components/cards',
-    'styles/components/banner',
-    'styles/components/filter',
-    'styles/components/coupon',
-    'styles/components/upload-input',
-    'styles/components/alert',
-    'styles/components/manager';
+@use 'styles/components/loading-spinner';
+@use 'styles/components/btn';
+@use 'styles/components/cards';
+@use 'styles/components/banner';
+@use 'styles/components/filter';
+@use 'styles/components/coupon';
+@use 'styles/components/upload-input';
+@use 'styles/components/alert';
+@use 'styles/components/manager';
 
 // 6. Page-specific styles
-@import
-    'styles/pages/list',
-    'styles/pages/suggestedproductslist',
-    'styles/pages/home',
-    'styles/pages/mycoupons',
-    'styles/pages/detail',
-    'styles/pages/profile',
-    'styles/pages/shoppingcart',
-    'styles/pages/login-modal';
+@use 'styles/pages/list';
+@use 'styles/pages/suggestedproductslist';
+@use 'styles/pages/home';
+@use 'styles/pages/mycoupons';
+@use 'styles/pages/detail';
+@use 'styles/pages/profile';
+@use 'styles/pages/shoppingcart';
+@use 'styles/pages/login-modal';

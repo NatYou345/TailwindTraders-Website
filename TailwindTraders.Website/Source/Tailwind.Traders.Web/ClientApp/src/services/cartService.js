@@ -1,6 +1,6 @@
 import axios from "axios";
-import { ConfigService } from "./"
-require('../helpers/errorsHandler');
+import { ConfigService } from "./index.js"
+import '../helpers/errorsHandler.js';
 
 const CartService = {
     async getShoppingCart(token) {

@@ -1,43 +1,45 @@
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the login popup.
 // -----------------------------------------------------------------------------
 .modal {
-    border-radius: $border-radius-s;
-    box-shadow: $box-shadow-l;
-    background-color: $color-background-light;
-    padding-bottom: $space-l;
-    padding-left: $space-l;
-    padding-right: $space-l;
-    padding-top: $padding-xl;
+    border-radius: variables.$border-radius-s;
+    box-shadow: variables.$box-shadow-l;
+    background-color: variables.$color-background-light;
+    padding-bottom: variables.$space-l;
+    padding-left: variables.$space-l;
+    padding-right: variables.$space-l;
+    padding-top: variables.$padding-xl;
     position: relative;
     width: 90%;
-    z-index: $z-index-xxl;
+    z-index: variables.$z-index-xxl;
 
-    @media (min-width: $mq-m) {
-        padding-left: $space-l;
-        padding-right: $space-l;
-        padding-bottom: $space-l;
+    @media (min-width: variables.$mq-m) {
+        padding-left: variables.$space-l;
+        padding-right: variables.$space-l;
+        padding-bottom: variables.$space-l;
         width: 50%;
     }
 
-    @media (min-width: $mq-l) {
+    @media (min-width: variables.$mq-l) {
         width: 40%;
     }
 
-    @media (min-width: $mq-xl) {
+    @media (min-width: variables.$mq-xl) {
         width: 30%;
     }
 
     svg {
         &:first-of-type {
             position: absolute;
-            right: $space-s;
-            top: $space-m;
+            right: variables.$space-s;
+            top: variables.$space-m;
         }
 
         &:last-of-type {
             display: block;
-            margin-bottom: $margin-l;
+            margin-bottom: variables.$margin-l;
             margin-left: auto;
             margin-right: auto;
             height: 4rem;
@@ -47,7 +49,7 @@
 
     &__form {
         display: block;
-        margin-bottom: $margin-l;
+        margin-bottom: variables.$margin-l;
         margin-left: auto;
         margin-right: auto;
         width: 80%;
@@ -58,23 +60,23 @@
         border-top: initial;
         border-left: initial;
         border-right: initial;
-        border-bottom: 2px solid $color-border;
-        color: $color-text-primary;
-        font-size: $font-big;
-        font-weight: $font-weight-medium;
-        padding-bottom: $padding-s;
+        border-bottom: 2px solid variables.$color-border;
+        color: variables.$color-text-primary;
+        font-size: variables.$font-big;
+        font-weight: variables.$font-weight-medium;
+        padding-bottom: variables.$padding-s;
         width: 100%;
         padding: .5rem;
         line-height: 1rem;
 
         &:focus {
-            border-bottom: 2px solid $color-warning;
+            border-bottom: 2px solid variables.$color-warning;
         }
 
         &:invalid {
-            border-bottom: 2px solid $color-warning;
+            border-bottom: 2px solid variables.$color-warning;
             box-shadow: initial;
-            color: $color-warning;
+            color: variables.$color-warning;
 
             &:focus {
                 outline: initial;
@@ -82,48 +84,48 @@
         }
 
         &:first-of-type {
-            margin-bottom: $margin-l;
+            margin-bottom: variables.$margin-l;
         }
 
         &::-webkit-input-placeholder {
             // Chrome/Opera/Safari
-            color: $color-text-primary;
+            color: variables.$color-text-primary;
             opacity: .35;
-            font-size: $font-big;
-            font-weight: $font-weight-medium;
+            font-size: variables.$font-big;
+            font-weight: variables.$font-weight-medium;
         }
 
         &::-moz-placeholder {
             // Firefox 19+
-            color: $color-text-primary;
+            color: variables.$color-text-primary;
             opacity: .35;
-            font-size: $font-big;
-            font-weight: $font-weight-medium;
+            font-size: variables.$font-big;
+            font-weight: variables.$font-weight-medium;
         }
 
         &:-ms-input-placeholder {
             // IE 10+
-            color: $color-text-primary;
+            color: variables.$color-text-primary;
             opacity: .35;
-            font-size: $font-big;
-            font-weight: $font-weight-medium;
+            font-size: variables.$font-big;
+            font-weight: variables.$font-weight-medium;
         }
 
         &:-moz-placeholder {
             // Firefox 18-
-            color: $color-text-primary;
+            color: variables.$color-text-primary;
             opacity: .35;
-            font-size: $font-big;
-            font-weight: $font-weight-medium;
+            font-size: variables.$font-big;
+            font-weight: variables.$font-weight-medium;
         }
     }
 
     &__label {
         display: block;
-        color: $color-text-primary;
-        font-size: $font-big;
-        font-weight: $font-weight-light;
-        margin-bottom: $margin-s;
+        color: variables.$color-text-primary;
+        font-size: variables.$font-big;
+        font-weight: variables.$font-weight-light;
+        margin-bottom: variables.$margin-s;
     }
 
     &__btns {
@@ -140,11 +142,11 @@
         }
 
         span {
-            margin-bottom: $space-m;
-            margin-top: $space-m;
+            margin-bottom: variables.$space-m;
+            margin-top: variables.$space-m;
             font-size: 0.875rem;
-            font-weight: $font-weight-medium;
-            color: $color-text-primary;
+            font-weight: variables.$font-weight-medium;
+            color: variables.$color-text-primary;
             text-transform: uppercase;
         }
     }
@@ -156,7 +158,7 @@
     &-overlay {
         align-items: center;
         display: flex;
-        background-color: rgba($color-primary, 0.7);
+        background-color: rgba(variables.$color-primary, 0.7);
         backdrop-filter: blur(3px);
         height: 100vh;
         justify-content: center;
@@ -164,7 +166,7 @@
         position: absolute;
         top: 0;
         width: 100%;
-        z-index: $z-index-l;
+        z-index: variables.$z-index-l;
 
         &.is-opened {
             display: flex;
@@ -178,8 +180,8 @@
         text-align: center;
 
         .btn {
-            margin-top: $margin-m;
-            margin-bottom: $margin-m;
+            margin-top: variables.$margin-m;
+            margin-bottom: variables.$margin-m;
             cursor: pointer;
         }
     }

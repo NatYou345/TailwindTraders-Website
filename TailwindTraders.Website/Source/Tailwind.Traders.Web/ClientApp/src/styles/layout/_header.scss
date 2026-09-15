@@ -1,3 +1,6 @@
+@use "../abstracts/mixins/font-placeholders";
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
@@ -11,8 +14,8 @@
     overflow: hidden;
 
     svg {
-        fill: $color-primary;
-        height: $icon-l;
+        fill: variables.$color-primary;
+        height: variables.$icon-l;
 
         &:hover {
             cursor: pointer;
@@ -29,23 +32,23 @@
 
 .main-nav {
     align-items: center;
-    background-color: $color-background-primary;
+    background-color: variables.$color-background-primary;
     display: flex;
     height: 100vh;
     order: 2;
     overflow: hidden;
-    padding: $space-m;
+    padding: variables.$space-m;
     position: fixed;
     right: -100vw;
     text-align: center;
     text-transform: uppercase;
     top: 0;
-    transition: right $animation-speed-regular $animation-type-regular;
+    transition: right variables.$animation-speed-regular variables.$animation-type-regular;
     width: 60%;
     will-change: right;
-    z-index: $z-index-l;
+    z-index: variables.$z-index-l;
 
-    @media (min-width: $mq-r) {
+    @media (min-width: variables.$mq-r) {
         background-color: transparent;
         height: auto;
         justify-content: space-around;
@@ -64,23 +67,23 @@
     }
 
     &:not(.is-opened) .main-nav__item {
-        color: $color-text-primary;
+        color: variables.$color-text-primary;
     }
 
     &.is-opened {
         flex-direction: column;
-        padding-top: $padding-xl;
+        padding-top: variables.$padding-xl;
         overflow: hidden;
         right: 0;
 
         .main-nav__item {
             display: block;
-            color: $color-text-tertiary;
-            font-weight: $font-weight-medium;
-            margin-bottom: $margin-m;
+            color: variables.$color-text-tertiary;
+            font-weight: variables.$font-weight-medium;
+            margin-bottom: variables.$margin-m;
 
             &:nth-child(7) {
-                margin-bottom: $margin-xl;
+                margin-bottom: variables.$margin-xl;
             }
         }
 
@@ -96,14 +99,14 @@
           top: 1.5rem;
 
           svg {
-            fill: $color-svg-tertiary;
+            fill: variables.$color-svg-tertiary;
           }
         }
     }
 
     &__item {
-        @include text-xxs();
-        color: $color-link;
+        @include font-placeholders.text-xxs();
+        color: variables.$color-link;
         display: block;
         text-decoration: none;
         text-transform: uppercase;
@@ -126,7 +129,7 @@
         display: none;
     }
 
-    @media (min-width: $mq-r) {
+    @media (min-width: variables.$mq-r) {
         svg:nth-child(2) {
             display: inline;
         }
@@ -148,16 +151,16 @@
             height: 1.25rem;
             font-size: 0.5rem;
             border-radius: 50%;
-            background-color: $color-background-light;
+            background-color: variables.$color-background-light;
             border: 1px solid currentColor;
             top: -.5rem;
             right: -.5rem;
-            color: $color-text-primary;
+            color: variables.$color-text-primary;
         }
     }
 
     &__login {
-        color: $color-text-primary;
+        color: variables.$color-text-primary;
         cursor: pointer;
     }
 

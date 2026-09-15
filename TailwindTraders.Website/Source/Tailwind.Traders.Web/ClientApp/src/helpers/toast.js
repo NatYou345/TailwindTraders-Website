@@ -1,4 +1,3 @@
-import 'izitoast/dist/css/iziToast.min.css'
 import iZtoast from 'izitoast'
 
 const toast = {

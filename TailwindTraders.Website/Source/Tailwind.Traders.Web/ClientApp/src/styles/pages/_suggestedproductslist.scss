@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the Suggested Products List page
 // -----------------------------------------------------------------------------
@@ -5,7 +7,7 @@
 .suggestedproductslist {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-column-gap: $grid-gap-m;
+    grid-column-gap: variables.$grid-gap-m;
     grid-row-gap: 3rem;
     grid-template-rows: 20rem;
     grid-auto-rows: 20rem;
@@ -23,13 +25,13 @@
         grid-row-gap: 6rem;
     }
 
-    @media (min-width: $mq-m) {
-        max-width: $grid-max-width-m;
+    @media (min-width: variables.$mq-m) {
+        max-width: variables.$grid-max-width-m;
         grid-row-gap: 6.5rem;
     }
 
-    @media (min-width: $mq-l) {
-        max-width: $grid-max-width-l;
+    @media (min-width: variables.$mq-l) {
+        max-width: variables.$grid-max-width-l;
     }
 
     .card__item {
@@ -40,7 +42,7 @@
             grid-column: span 6;
         }
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             &:last-of-type {
                 display: flex;
             }
@@ -63,7 +65,7 @@
     }
 
     .btn {
-        box-shadow: $box-shadow-l;
+        box-shadow: variables.$box-shadow-l;
         margin-bottom: -2rem;
         margin-left: auto;
         margin-right: auto;
@@ -72,11 +74,11 @@
             margin-bottom: 0;
         }
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             margin-bottom: 0.375rem;
         }
 
-        @media (min-width: $mq-l) {
+        @media (min-width: variables.$mq-l) {
             margin-bottom: 1.875rem;
         }
     }

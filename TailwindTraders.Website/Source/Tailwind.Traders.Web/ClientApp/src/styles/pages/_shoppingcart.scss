@@ -1,3 +1,7 @@
+@use "../abstracts/mixins/ellipsis";
+@use "../abstracts/mixins/font-placeholders";
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the Suggested Products List page
 // -----------------------------------------------------------------------------
@@ -8,7 +12,7 @@
         grid-auto-rows: 19.5rem;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 19.5rem;
-        grid-gap: $grid-gap-m;
+        grid-gap: variables.$grid-gap-m;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 4rem;
@@ -23,10 +27,10 @@
     }
 
     &__item {
-        box-shadow: $box-shadow-l;
+        box-shadow: variables.$box-shadow-l;
         grid-column: span 4;
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             grid-column: span 2;
         }
     }
@@ -43,21 +47,21 @@
 
     &__heading,
     &__description {
-        color: $color-text-primary;
-        margin-bottom: $margin-s;
+        color: variables.$color-text-primary;
+        margin-bottom: variables.$margin-s;
         text-align: center;
         padding-left: .625rem;
         padding-right: .625rem;
     }
 
     &__heading {
-        @include text-l-price();
+        @include font-placeholders.text-l-price();
         margin-top: 0;
     }
 
     &__description {
-        @include text-m();
+        @include font-placeholders.text-m();
         margin-top: 0;
-        @include ellipsis();
+        @include ellipsis.ellipsis();
     }
 }

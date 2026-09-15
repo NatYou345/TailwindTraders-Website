@@ -1,9 +1,11 @@
+@use "../abstracts/variables";
+
 //
 // Basic typography style for copy text
 //
 
 body {
-    color: $color-base;
-    font-family: $font-family-body;
+    color: variables.$color-base;
+    font-family: variables.$font-family-body;
     font-size: 100%;
 }

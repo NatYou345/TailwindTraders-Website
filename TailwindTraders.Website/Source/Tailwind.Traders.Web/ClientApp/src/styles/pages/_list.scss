@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the Products List pages.
 // -----------------------------------------------------------------------------
@@ -5,11 +7,11 @@
     &__content {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        grid-column-gap: $grid-gap-m;
+        grid-column-gap: variables.$grid-gap-m;
         margin-bottom: 4rem;
         margin-left: auto;
         margin-right: auto;
-        max-width: $container-width-xl;
+        max-width: variables.$container-width-xl;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
@@ -19,17 +21,17 @@
     }
 
     &__panel {
-        background-color: $color-background-light;
+        background-color: variables.$color-background-light;
         top: -100vh;
         height: 100vh;
         left: 0;
-        padding: $padding-xl;
+        padding: variables.$padding-xl;
         position: absolute;
-        transition: top $animation-speed-regular $animation-type-regular;
+        transition: top variables.$animation-speed-regular variables.$animation-type-regular;
         width: 100%;
         will-change: top;
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             top: auto;
             padding: 0;
             position: relative;
@@ -37,17 +39,17 @@
 
         &.is-opened {
             top: 0;
-            padding: $padding-xl;
-            z-index: $z-index-l;
+            padding: variables.$padding-xl;
+            z-index: variables.$z-index-l;
         }
 
         .btn--primary {
-            bottom: $space-l;
+            bottom: variables.$space-l;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
 
-            @media (min-width: $mq-m) {
+            @media (min-width: variables.$mq-m) {
                 display: none;
             }
         }
@@ -58,7 +60,7 @@
         background-color: transparent;
     }
 
-    @media (min-width: $mq-m) {
+    @media (min-width: variables.$mq-m) {
         .btn--float {
             display: none;
         }
@@ -66,11 +68,11 @@
 
     .list-grid {
         display: grid;
-        grid-column-gap: $grid-gap-m;
+        grid-column-gap: variables.$grid-gap-m;
         grid-template-columns: repeat(12, 1fr);
         grid-column-end: span 12;
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             grid-column-end: span 9;
             grid-row-gap: 5rem;
         }
@@ -99,8 +101,8 @@
         }
 
         .btn {
-            box-shadow: $box-shadow-l;
-            margin-bottom: -$margin-m;
+            box-shadow: variables.$box-shadow-l;
+            margin-bottom: -(variables.$margin-m);
             margin-left: auto;
             margin-right: auto;
         }

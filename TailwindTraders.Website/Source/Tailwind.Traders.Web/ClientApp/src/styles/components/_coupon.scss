@@ -1,16 +1,19 @@
+@use "../abstracts/mixins/font-placeholders";
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the coupon component of the site/application.
 // -----------------------------------------------------------------------------
 .coupon {
-    box-shadow: $box-shadow-l;
-    color: $color-text-primary;
+    box-shadow: variables.$box-shadow-l;
+    color: variables.$color-text-primary;
     display: grid;
     grid-column: span 4;
-    grid-column-gap: $grid-gap-m;
+    grid-column-gap: variables.$grid-gap-m;
     grid-template-columns: repeat(6, 1fr);
     overflow: hidden;
 
-    @media (min-width: $mq-l) {
+    @media (min-width: variables.$mq-l) {
         grid-column: span 6;
     }
 
@@ -32,7 +35,7 @@
     }
 
     &__img {
-        background-color: $color-background-accent-tertiary;
+        background-color: variables.$color-background-accent-tertiary;
         background-position: center;
         grid-column: span 2;
         height: 100%;
@@ -41,14 +44,14 @@
 
     &__content {
         grid-column: span 4;
-        z-index: $z-index-s;
+        z-index: variables.$z-index-s;
     }
 
     &__price {
-        @include text-xxl();
+        @include font-placeholders.text-xxl();
         color: inherit;
-        margin-bottom: $margin-m;
-        margin-top: $margin-l;
+        margin-bottom: variables.$margin-m;
+        margin-top: variables.$margin-l;
     }
 
     &__title,
@@ -56,20 +59,20 @@
     &__until {
         color: inherit;
         margin-top: 0;
-        margin-bottom: $margin-m;
+        margin-bottom: variables.$margin-m;
     }
     &__title {
-        @include text-m();
-        font-weight: $font-weight-medium;
+        @include font-placeholders.text-m();
+        font-weight: variables.$font-weight-medium;
     }
 
     &__description {
-        @include text-s();
+        @include font-placeholders.text-s();
     }
 
     &__until {
-        @include text-xs();
-        color: $color-text-accent-tertiary;
+        @include font-placeholders.text-xs();
+        color: variables.$color-text-accent-tertiary;
         text-transform: uppercase;
     }
 }

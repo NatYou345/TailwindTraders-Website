@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the Alert component of the site/application.
 // This is the code uses by a 3rd party library so, don't change class names
@@ -7,7 +9,7 @@
 }
 
 .s-alert-error {
-    background: $color-warning;
+    background: variables.$color-warning;
     padding: 0.5rem;
     text-align: center;
     max-width: 70rem;
@@ -16,7 +18,7 @@
 }
 
 .s-alert-success {
-    background: $color-background-success-altert;
+    background: variables.$color-background-success-altert;
     padding: 0.5rem;
     text-align: center;
     max-width: 70rem;
@@ -79,12 +81,12 @@
     height: 60%;
     top: 50%;
     left: 50%;
-    background: $color-background-light;
+    background: variables.$color-background-light;
 }
 
 .s-alert-close:hover::before,
 .s-alert-close:hover::after {
-    background: $color-background-light;
+    background: variables.$color-background-light;
 }
 
 .s-alert-close::before {
@@ -156,22 +158,22 @@
 
 // Scale
 .s-alert-effect-scale a {
-    color: $color-text-light;
+    color: variables.$color-text-light;
 }
 
 .s-alert-effect-scale a:hover,
 .s-alert-effect-scale a:focus {
-    color: $color-text-light;
+    color: variables.$color-text-light;
 }
 
 .s-alert-effect-scale .s-alert-close::before,
 .s-alert-effect-scale .s-alert-close::after {
-    background: $color-background-light;
+    background: variables.$color-background-light;
 }
 
 .s-alert-effect-scale .s-alert-close:hover::before,
 .s-alert-effect-scale .s-alert-close:hover::after {
-    background: $color-background-light;
+    background: variables.$color-background-light;
 }
 
 .s-alert-effect-scale.s-alert-show,

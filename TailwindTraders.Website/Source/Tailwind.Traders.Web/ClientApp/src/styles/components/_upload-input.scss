@@ -1,3 +1,6 @@
+@use "../abstracts/mixins/font-placeholders";
+@use "../abstracts/variables";
+
 .upload {
     display: block;
     max-width: 18.5rem;
@@ -7,18 +10,18 @@
     }
 
     &__input + &__label {
-        background-color: $color-background-light;
-        border-radius: $padding-m * 2;
-        box-shadow: $box-shadow-s;
-        color: $color-text-primary;
+        background-color: variables.$color-background-light;
+        border-radius: variables.$padding-m * 2;
+        box-shadow: variables.$box-shadow-s;
+        color: variables.$color-text-primary;
         height: 4rem;
-        padding-left: $padding-l;
-        padding-right: $padding-l;
+        padding-left: variables.$padding-l;
+        padding-right: variables.$padding-l;
         text-align: center;
         white-space: nowrap;
 
         &:hover {
-            color: $color-text-tertiary;
+            color: variables.$color-text-tertiary;
             cursor: pointer;
             
             .upload__img {
@@ -27,8 +30,8 @@
         }
 
         &:active {
-            box-shadow: $box-shadow-xs;
-            color: $color-text-secondary;
+            box-shadow: variables.$box-shadow-xs;
+            color: variables.$color-text-secondary;
         }
     }
 
@@ -40,7 +43,7 @@
 
     &__img {
         display: none;
-        fill: $color-svg-primary;
+        fill: variables.$color-svg-primary;
         margin-right: 1rem;
 
         @media (min-width: 24.375em) {
@@ -54,12 +57,12 @@
     }
 
     &__title {
-        @include text-s();
-        font-weight: $font-weight-medium;
+        @include font-placeholders.text-s();
+        font-weight: variables.$font-weight-medium;
     }
 
     &__subtitle {
-        @include text-xs();
-        font-weight: $font-weight-light;
+        @include font-placeholders.text-xs();
+        font-weight: variables.$font-weight-light;
     }
 }

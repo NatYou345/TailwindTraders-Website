@@ -1,11 +1,15 @@
+@use "sass:math";
+@use "../variables";
+
 @mixin font-size($font-size) {
     font-size: $font-size + px;
-    font-size: #{$font-size} / #{$base-size} + rem;
+    font-size: math.div($font-size, variables.$base-size) * 1rem;
 }
 
 @mixin line-height($font-size, $base-line-height) {
     // Sets the line-height to a multiple
     // of $base-line-height that's not smaller than
     // $font-size
-    line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+    line-height: math.ceil(math.div($font-size, $base-line-height)) *
+        math.div($base-line-height, $font-size);
 }

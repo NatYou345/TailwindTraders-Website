@@ -3,8 +3,8 @@ import {
     getRefreshToken,
     setAccessToken,
     setRefreshToken
-} from './tokensHelper';
-import { ConfigService } from '../services'
+} from './tokensHelper.js';
+import { ConfigService } from '../services/index.js'
 import AuthB2CService from '../services/authB2CService';
 
 let failedRequestToRetry = [];
@@ -36,7 +36,7 @@ const onAccessTokenFetched = (accessToken) => {
 export const handleUnathenticatedRequest = async (authenticationError) => {
     try {
         const { response: errorResponse } = authenticationError;
-        const useB2cFromEnv = process.env.REACT_APP_USE_B2C ? JSON.parse(process.env.REACT_APP_USE_B2C.toLowerCase()) : false;
+        const useB2cFromEnv = import.meta.env.REACT_APP_USE_B2C ? JSON.parse(import.meta.env.REACT_APP_USE_B2C.toLowerCase()) : false;
 
         if (useB2cFromEnv) {
             return handleUnathenticatedRequestFromB2c(errorResponse, authenticationError);

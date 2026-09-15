@@ -1,10 +1,13 @@
+@use "../abstracts/mixins/font-placeholders";
+@use "../abstracts/variables";
+
 .recommended {
     margin-top: -12rem;
-    padding-left: $padding-m;
-    padding-right: $padding-m;
+    padding-left: variables.$padding-m;
+    padding-right: variables.$padding-m;
     opacity: 0.99;
 
-    @media (min-width: $mq-m) {
+    @media (min-width: variables.$mq-m) {
         margin-top: -20rem;
         padding-left: 2.5rem;
         padding-right: 2.5rem;
@@ -23,13 +26,13 @@
         margin-right: auto;
         max-width: 18.5rem;
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             margin-top: 0;
         }
 
         > svg {
             display: none;
-            fill: $color-svg-primary;
+            fill: variables.$color-svg-primary;
             margin-right: 1rem;
 
             @media (min-width: 390px) {
@@ -42,15 +45,15 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: $grid-gap-m;
-    margin-bottom: $margin-l;
+    grid-gap: variables.$grid-gap-m;
+    margin-bottom: variables.$margin-l;
     margin-left: auto;
     margin-right: auto;
 
     @media (min-width: 38.75em) {
         grid-template-columns: repeat(8, 1fr);
         grid-template-rows: 18rem 14rem 18rem;
-        margin-bottom: $margin-xl;
+        margin-bottom: variables.$margin-xl;
     }
 
     @media (min-width: 67.5em) {
@@ -58,15 +61,15 @@
         grid-template-rows: 14rem 18rem;
     }
 
-    @media (min-width: $mq-xl) {
-        max-width: $grid-max-width-xl;
+    @media (min-width: variables.$mq-xl) {
+        max-width: variables.$grid-max-width-xl;
     }
 
     &__wrapper {
-        background-color: $color-background-light;
+        background-color: variables.$color-background-light;
         margin-left: auto;
         margin-right: auto;
-        padding-top: $padding-l;
+        padding-top: variables.$padding-l;
         width: 100%;
 
         @media (min-width: 36em) {
@@ -74,23 +77,23 @@
             padding-right: 2rem;
         }
 
-        @media (min-width: $mq-l) {
+        @media (min-width: variables.$mq-l) {
             padding-top: 2.5rem;
         }
 
-        @media (min-width: $mq-xl) {
-            max-width: $grid-max-width-xl;
+        @media (min-width: variables.$mq-xl) {
+            max-width: variables.$grid-max-width-xl;
         }
     }
 
     &__heading {
-        @include text-xl();
-        color: $color-text-primary;
-        margin-bottom: $margin-l;
+        @include font-placeholders.text-xl();
+        color: variables.$color-text-primary;
+        margin-bottom: variables.$margin-l;
         margin-top: 0;
         text-align: center;
 
-        @media (min-width: $mq-l) {
+        @media (min-width: variables.$mq-l) {
             margin-bottom: 2.5rem;
         }
     }

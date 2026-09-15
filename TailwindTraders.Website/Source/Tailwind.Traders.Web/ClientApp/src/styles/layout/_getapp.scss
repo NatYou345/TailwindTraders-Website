@@ -1,16 +1,19 @@
+@use "../abstracts/mixins/font-placeholders";
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the get-app component of the site/application.
 // -----------------------------------------------------------------------------
 .getapp {
     align-items: center;
-    background-color: $color-background-accent-secondary;
+    background-color: variables.$color-background-accent-secondary;
     display: flex;
     flex-direction: column;
     height: 25rem;
     margin-bottom: 11rem;
-    padding-left: $padding-l;
-    padding-right: $padding-l;
-    padding-top: $padding-xl;
+    padding-left: variables.$padding-l;
+    padding-right: variables.$padding-l;
+    padding-top: variables.$padding-xl;
 
     @media (min-width: 23em) {
         margin-bottom: 8rem;
@@ -20,17 +23,17 @@
         margin-bottom: 17rem;
     }
 
-    @media (min-width: $mq-l) {
+    @media (min-width: variables.$mq-l) {
         padding-left: 5%;
         padding-right: 5%;
         justify-content: center;
     }
 
-    @media (min-width: $mq-xl) {
+    @media (min-width: variables.$mq-xl) {
         margin-bottom: 11rem;
     }
 
-    @media (min-width: $mq-l) {
+    @media (min-width: variables.$mq-l) {
         align-items: center;
         display: flex;
         height: 30rem;
@@ -42,7 +45,7 @@
     &__header {
         opacity: 0.99;
 
-        @media (min-width: $mq-l) {
+        @media (min-width: variables.$mq-l) {
             order: 1;
             margin-top: -4rem;
             min-width: 27.0625rem;
@@ -50,40 +53,40 @@
         }
     }
 
-    @media (min-width: $mq-xl) {
+    @media (min-width: variables.$mq-xl) {
         margin-left: auto;
         margin-right: auto;
         max-width: 87.5rem;
     }
 
     &-title {
-        @include text-xxl();
-        color: $color-text-primary;
-        margin-bottom: $margin-xs;
+        @include font-placeholders.text-xxl();
+        color: variables.$color-text-primary;
+        margin-bottom: variables.$margin-xs;
         margin-top: 0;
         text-align: center;
 
-        @media (min-width: $mq-m) {
-            margin-bottom: $margin-m;
+        @media (min-width: variables.$mq-m) {
+            margin-bottom: variables.$margin-m;
         }
 
-        @media (min-width: $mq-l) {
-            margin-bottom: $margin-l;
+        @media (min-width: variables.$mq-l) {
+            margin-bottom: variables.$margin-l;
             white-space: nowrap;
         }
     }
 
     &-text {
-        @include text-m();
-        color: $color-text-primary;
+        @include font-placeholders.text-m();
+        color: variables.$color-text-primary;
         margin-top: 0;
-        margin-bottom: $margin-l;
+        margin-bottom: variables.$margin-l;
         text-align: center;
     }
 
     &-btntext {
-        @include text-xs();
-        font-weight: $font-weight-light;
+        @include font-placeholders.text-xs();
+        font-weight: variables.$font-weight-light;
     }
 
     &__stores-wrapper {
@@ -92,7 +95,7 @@
         max-width: 25.875rem;
 
         > .getapp__btn:first-of-type {
-            margin-right: $margin-m;
+            margin-right: variables.$margin-m;
         }
     }
 
@@ -117,13 +120,13 @@
                 max-height: 31.25rem;
             }
 
-            @media (min-width: $mq-l) {
+            @media (min-width: variables.$mq-l) {
                 max-height: 37.5rem;
                 margin-bottom: -6.25rem;
                 margin-left: -5%;
             }
 
-            @media (min-width: $mq-xl) {
+            @media (min-width: variables.$mq-xl) {
                 max-height: 44rem;
                 margin-left: -32rem;
                 margin-bottom: -9.0625rem;

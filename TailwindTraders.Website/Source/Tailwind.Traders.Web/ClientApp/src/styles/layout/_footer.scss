@@ -1,11 +1,14 @@
+@use "../abstracts/mixins/font-placeholders";
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
 .foo {
-    background-color: $color-background-medium;
+    background-color: variables.$color-background-medium;
     display: flex;
     flex-wrap: wrap;
-    padding: $padding-l;
+    padding: variables.$padding-l;
 
     &__content {
         align-items: center;
@@ -15,63 +18,63 @@
         margin-right: auto;
         width: 100%;
 
-        @media (min-width: $mq-s) {
-            width: $grid-max-width-s;
+        @media (min-width: variables.$mq-s) {
+            width: variables.$grid-max-width-s;
         }
 
-        @media (min-width: $mq-m) {
-            width: $grid-max-width-m;
+        @media (min-width: variables.$mq-m) {
+            width: variables.$grid-max-width-m;
         }
 
-        @media (min-width: $mq-l) {
-            width: $grid-max-width-l;
+        @media (min-width: variables.$mq-l) {
+            width: variables.$grid-max-width-l;
         }
 
-        @media (min-width: $mq-xl) {
-            width: $grid-max-width-xl;
+        @media (min-width: variables.$mq-xl) {
+            width: variables.$grid-max-width-xl;
         }
     }
 
     &__disclaimer {
-        margin-top: $margin-s;
+        margin-top: variables.$margin-s;
     }
 
     &-text {
-        @include text-xs();
-        color: $color-text-primary;
-        margin-top: $margin-m;
+        @include font-placeholders.text-xs();
+        color: variables.$color-text-primary;
+        margin-top: variables.$margin-m;
         text-align: center;
         margin-bottom: 0;
     }
 
     svg {
-        fill: $color-primary;
+        fill: variables.$color-primary;
         display: block;
-        margin-bottom: $margin-m;
+        margin-bottom: variables.$margin-m;
     }
 
     &__links {
-        margin-top: $margin-m;
+        margin-top: variables.$margin-m;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         text-align: center;
 
-        @media (min-width: $mq-m) {
-            margin-top: $margin-s;
+        @media (min-width: variables.$mq-m) {
+            margin-top: variables.$margin-s;
             flex-direction: row;
         }
     }
 
     &__link {
-        @include text-s();
-        color: $color-text-primary;
-        font-weight: $font-weight-medium;
+        @include font-placeholders.text-s();
+        color: variables.$color-text-primary;
+        font-weight: variables.$font-weight-medium;
         white-space: nowrap;
 
         &:not(:last-of-type) {
-            @media (min-width: $mq-m) {
-                margin-right: $margin-l;
+            @media (min-width: variables.$mq-m) {
+                margin-right: variables.$margin-l;
             }
         }
     }

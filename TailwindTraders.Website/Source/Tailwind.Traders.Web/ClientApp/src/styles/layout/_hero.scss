@@ -1,3 +1,6 @@
+@use "../abstracts/mixins/font-placeholders";
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the hero component of the site/application.
 // -----------------------------------------------------------------------------
@@ -5,39 +8,39 @@
     position: relative;
 
     svg {
-        fill: $color-svg-tertiary;
+        fill: variables.$color-svg-tertiary;
     }
 
     &__banner {
         align-items: center;
-        background-color: $color-background-primary;
-        box-shadow: $box-shadow-m;
-        color: $color-text-tertiary;
+        background-color: variables.$color-background-primary;
+        box-shadow: variables.$box-shadow-m;
+        color: variables.$color-text-tertiary;
         display: flex;
         height: 3rem;
         justify-content: center;
         left: 50%;
-        margin-top: -$margin-s;
+        margin-top: -(variables.$margin-s);
         position: absolute;
-        top: -$margin-s;
+        top: -(variables.$margin-s);
         transform: translateX(-50%) translateZ(0);
         width: 100%;
-        z-index: $z-index-s;
+        z-index: variables.$z-index-s;
 
-        @media (min-width: $mq-s) {
+        @media (min-width: variables.$mq-s) {
             width: 22.5rem;
         }
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             height: 4rem;
             width: 63.5rem;
         }
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             width: 94%;
         }
 
-        @media (min-width: $mq-l) {
+        @media (min-width: variables.$mq-l) {
             width: 80%;
         }
     }
@@ -48,15 +51,15 @@
         justify-content: space-between;
         width: 16rem;
 
-        @media (min-width: $mq-s) {
+        @media (min-width: variables.$mq-s) {
             width: 17.8125rem;
         }
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             width: 18rem;
         }
 
-        @media (min-width: $mq-l) {
+        @media (min-width: variables.$mq-l) {
             width: 22rem;
         }
 
@@ -73,26 +76,26 @@
         white-space: nowrap;
 
         &--strong {
-            @include text-s();
-            font-weight: $font-weight-medium;
+            @include font-placeholders.text-s();
+            font-weight: variables.$font-weight-medium;
         }
 
         &--light {
-            @include text-xs();
-            font-weight: $font-weight-light;
+            @include font-placeholders.text-xs();
+            font-weight: variables.$font-weight-light;
         }
     }
     &__image-wrapper {
-        background-color: $color-background-primary;
+        background-color: variables.$color-background-primary;
     }
 
     &__image {
         height: 20rem;
         background-size: cover;
         opacity: 0;
-        transition: opacity $animation-speed-regular $animation-type-regular;
+        transition: opacity variables.$animation-speed-regular variables.$animation-type-regular;
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             height: 38.5rem;
         }
     }

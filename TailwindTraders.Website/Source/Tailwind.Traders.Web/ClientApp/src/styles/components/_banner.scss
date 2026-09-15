@@ -1,3 +1,6 @@
+@use "../abstracts/mixins/font-placeholders";
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the banner component of the site/application.
 // -----------------------------------------------------------------------------
@@ -8,14 +11,14 @@
     margin-right: auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    max-width: $container-width-xl;
+    max-width: variables.$container-width-xl;
     justify-content: space-between;
 
     @media (min-width: 67.5em) {
         display: flex;
     }
 
-    @media (min-width: $mq-l) {
+    @media (min-width: variables.$mq-l) {
         margin-bottom: 8rem;
     }
 
@@ -25,7 +28,7 @@
 
     &__buttons {
         display: grid;
-        grid-column-gap: $grid-gap-m;
+        grid-column-gap: variables.$grid-gap-m;
 
         @media (min-width: 34.375em) {
             grid-template-columns: repeat(2, 1fr);
@@ -56,9 +59,9 @@
     }
 
     &__item {
-        @include text-m;
+        @include font-placeholders.text-m;
 
-        color: $color-text-primary;
+        color: variables.$color-text-primary;
         display: block;
         margin-bottom: 16px;
 
@@ -68,14 +71,14 @@
         }
 
         &:first-child {
-            font-weight: $font-weight-light;
+            font-weight: variables.$font-weight-light;
         }
 
         &:last-child {
-            @include text-s;
+            @include font-placeholders.text-s;
 
             align-items: center;
-            font-weight: $font-weight-medium;
+            font-weight: variables.$font-weight-medium;
 
             @media (min-width: 67.5em) {
                 display: flex;

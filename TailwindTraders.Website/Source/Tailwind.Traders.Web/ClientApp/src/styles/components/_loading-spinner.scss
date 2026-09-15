@@ -1,3 +1,5 @@
+@use "../abstracts/mixins/loader";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the Loading Spinner component of the site/application.
 // -----------------------------------------------------------------------------
@@ -9,5 +11,5 @@
 }
 
 .loader {
-    @include loader();
+    @include loader.loader();
 }

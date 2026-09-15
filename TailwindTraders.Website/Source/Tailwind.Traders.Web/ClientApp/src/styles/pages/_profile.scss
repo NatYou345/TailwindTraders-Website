@@ -1,3 +1,6 @@
+@use "../abstracts/mixins/font-placeholders";
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the User Profile page.
 // -----------------------------------------------------------------------------
@@ -10,7 +13,7 @@
     .grid-container {
         grid-template-columns: 1fr;
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1.4fr 1fr;
@@ -36,16 +39,16 @@
 
     &__data {
         &--empty {
-            margin-right: $margin-m;
-            margin-left: $margin-m;
-            box-shadow: $box-shadow-l;
-            padding-left: $grid-gap-m;
-            padding-right: $grid-gap-m;
-            padding-bottom: $grid-gap-m;
-            padding-top: $grid-gap-m;
+            margin-right: variables.$margin-m;
+            margin-left: variables.$margin-m;
+            box-shadow: variables.$box-shadow-l;
+            padding-left: variables.$grid-gap-m;
+            padding-right: variables.$grid-gap-m;
+            padding-bottom: variables.$grid-gap-m;
+            padding-top: variables.$grid-gap-m;
 
-            @media (min-width: $mq-m) {
-                margin-right: $margin-m;
+            @media (min-width: variables.$mq-m) {
+                margin-right: variables.$margin-m;
                 margin-left: 0;
             }
         }
@@ -57,49 +60,49 @@
         align-items: center;
 
         .btn {
-            padding-left: $padding-m;
-            padding-right: $padding-m;
-            margin-right: $margin-m;
+            padding-left: variables.$padding-m;
+            padding-right: variables.$padding-m;
+            margin-right: variables.$margin-m;
 
-            @media (min-width: $mq-s) {
-                padding-left: $padding-l;
-                padding-right: $padding-l;
+            @media (min-width: variables.$mq-s) {
+                padding-left: variables.$padding-l;
+                padding-right: variables.$padding-l;
             }
         }
 
         &-title {
-            @include text-xl;
+            @include font-placeholders.text-xl;
 
-            color: $color-text-primary;
+            color: variables.$color-text-primary;
             text-align: center;
             margin-top: 2.5rem;
             margin-bottom: 2.5rem;
-            margin-left: $margin-l;
+            margin-left: variables.$margin-l;
             text-align: left;
         }
 
         &-history {
             margin-left: -4rem;
-            padding-left: $padding-m;
+            padding-left: variables.$padding-m;
         }
 
         &-recommended {
             margin-bottom: 5rem;
 
-            @media (min-width: $mq-m) {
+            @media (min-width: variables.$mq-m) {
                 margin-bottom: 5.25rem;
             }
         }
     }
 
     &-wapper {
-        margin: $margin-m;
-        box-shadow: $box-shadow-l;
+        margin: variables.$margin-m;
+        box-shadow: variables.$box-shadow-l;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         padding-bottom: 1.5rem;
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -111,8 +114,8 @@
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        padding-top: $padding-l;
-        padding-bottom: $padding-m;
+        padding-top: variables.$padding-l;
+        padding-bottom: variables.$padding-m;
 
         width: auto;
         text-align: center;
@@ -120,13 +123,13 @@
 
         
 
-        @media (min-width: $mq-s) {
+        @media (min-width: variables.$mq-s) {
             margin: 0 auto;
             width: 10rem;
         }
 
-        @media (min-width: $mq-m) {
-            margin-right: $margin-m;
+        @media (min-width: variables.$mq-m) {
+            margin-right: variables.$margin-m;
             margin-left: 0;
         }
 
@@ -137,26 +140,26 @@
     }
 
     &__info {
-        color: $color-text-primary;
-        font-size: $font-big;
+        color: variables.$color-text-primary;
+        font-size: variables.$font-big;
     }
 
     &__title {
         margin-top: 0;
         margin-bottom: .5rem;
-        font-weight: $font-weight-light;
+        font-weight: variables.$font-weight-light;
     }
 
     &__subtitle {
         margin: 0;
-        margin-bottom: $margin-m;
+        margin-bottom: variables.$margin-m;
     }
 
     .mycoupons {
         &__grid {
             max-width: 100%;
-            margin-left: $margin-m;
-            margin-right: $margin-m;
+            margin-left: variables.$margin-m;
+            margin-right: variables.$margin-m;
 
             .coupon {
                 grid-column: span 12;
@@ -171,9 +174,9 @@
 
     .history {
         padding-left: 4rem;
-        padding-right: $padding-m;
+        padding-right: variables.$padding-m;
 
-        @media (min-width: $mq-s) {
+        @media (min-width: variables.$mq-s) {
             padding-left: 6rem;
         }
 
@@ -182,16 +185,16 @@
             align-items: center;
             margin-left: -2.875rem;
 
-            @media (min-width: $mq-s) {
+            @media (min-width: variables.$mq-s) {
                 margin-left: -4.875rem;
             }
         }
 
         &__item {
             background: #fff;
-            box-shadow: $box-shadow-l;
+            box-shadow: variables.$box-shadow-l;
             width: 100%;
-            margin-bottom: $margin-m;
+            margin-bottom: variables.$margin-m;
         }
 
         &__image {
@@ -200,35 +203,35 @@
             height: 6rem;
             z-index: 1;
 
-            @media (min-width: $mq-s) {
+            @media (min-width: variables.$mq-s) {
                 width: 9.75rem;
                 height: 9.75rem;
             }
         }
 
         &__info {
-            @include text-m;
+            @include font-placeholders.text-m;
 
-            font-weight: $font-weight-medium;
-            color: $color-text-primary;
+            font-weight: variables.$font-weight-medium;
+            color: variables.$color-text-primary;
             min-height: 6.875rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             line-height: 2rem;
-            margin-left: $margin-m;
+            margin-left: variables.$margin-m;
 
-            @media (min-width: $mq-s) {
+            @media (min-width: variables.$mq-s) {
                 height: 9.5rem;
                 margin-left: 0;
-                padding-left: $padding-m;
+                padding-left: variables.$padding-m;
                 font-size: 1.5rem;
             }
 
             &-name {
                 margin: 0;
 
-                @media (min-width: $mq-s) {
+                @media (min-width: variables.$mq-s) {
                     margin-bottom: .5rem;
                 }
             }
@@ -242,14 +245,14 @@
     .cards {
         margin-bottom: 0;
 
-        @media (min-width: $mq-m) {
+        @media (min-width: variables.$mq-m) {
             margin-bottom: 5rem;
         }
 
         .btn {
             box-shadow: 10px 10px 52px 0 rgba(0, 0, 0, 0.2);
             display: block;
-            margin-bottom: -$margin-m;
+            margin-bottom: -(variables.$margin-m);
             margin-left: auto;
             margin-right: auto;
         }
@@ -261,7 +264,7 @@
                 text-overflow: ellipsis;
                 white-space: nowrap;
 
-                @media (min-width: $mq-s) {
+                @media (min-width: variables.$mq-s) {
                     max-width: 11.25rem;
                     line-height: 2rem;
                 }
@@ -273,7 +276,7 @@
         display: flex;
         flex-direction: column;
 
-        @media (min-width: $mq-s) {
+        @media (min-width: variables.$mq-s) {
             flex-direction: row;
         }
 
@@ -286,11 +289,11 @@
             justify-content: center;
             min-height: 14.5rem; // 232px
             background-position: center;
-            margin-bottom: $margin-m;
-            margin-left: $margin-m;
-            margin-right: $margin-m;
+            margin-bottom: variables.$margin-m;
+            margin-left: variables.$margin-m;
+            margin-right: variables.$margin-m;
 
-            @media (min-width: $mq-s) {
+            @media (min-width: variables.$mq-s) {
                 width: 100%;
 
                 &:last-child {
@@ -298,7 +301,7 @@
                 }
             }
 
-            @media (min-width: $mq-m) {
+            @media (min-width: variables.$mq-m) {
                 &:last-child {
                     display: flex;
                 }

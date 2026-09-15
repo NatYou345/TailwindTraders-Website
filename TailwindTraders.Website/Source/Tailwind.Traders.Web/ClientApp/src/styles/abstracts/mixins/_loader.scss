@@ -1,3 +1,6 @@
+@use "sass:math";
+@use "../variables";
+
 @mixin loader-rotate {
     @keyframes loader-rotate {
         0% {
@@ -29,10 +32,10 @@
 }
 
 @mixin loader(
-    $size: $loader-size,
-    $color: $loader-color,
-    $border-size: $loader-border-size,
-    $duration: $loader-animation-duration,
+    $size: variables.$loader-size,
+    $color: variables.$loader-color,
+    $border-size: variables.$loader-border-size,
+    $duration: variables.$loader-animation-duration,
     $align: null
 ) {
     width: $size;
@@ -47,7 +50,7 @@
     }
     @if ($align == middle) {
         top: 50%;
-        margin: -$size / 2 auto 0;
+        margin: math.div(-$size, 2) auto 0;
     }
     @include loader-rotate;
 }

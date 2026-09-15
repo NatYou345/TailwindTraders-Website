@@ -1,0 +1,42 @@
+import React, { Component, Fragment } from "react";
+
+import { withTranslation } from "react-i18next";
+
+import { Card, UploadFile } from "../../shared";
+
+class SuggestedProductsList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            suggestedProductsList: null,
+        }
+    }
+
+    async componentDidMount() {
+        const suggestedProductsList = this.props.location.state;
+        this.setState({ suggestedProductsList: suggestedProductsList.relatedProducts });
+    }
+
+    render() {
+        const productsReceived = this.state.suggestedProductsList;
+        const { t } = this.props;
+        return (
+                    <Fragment>
+                        <div className="banner">
+                            <span className="banner__item">{t("shared.banner.disclaimer")}</span>
+                            <div className="banner__item">
+                                <span>{t("shared.banner.info")}</span>
+                            </div>
+                            <UploadFile title={t("shared.banner.uploadPhotoTitle")} />
+                        </div>
+                        <div className="suggestedproductslist">
+                            {productsReceived && productsReceived.map((suggestedProductsListInfo, index) => (
+                                <Card {...suggestedProductsListInfo} key={index} />
+                            ))}
+                        </div>
+                    </Fragment>
+        );
+    }
+}
+
+export default withTranslation()(SuggestedProductsList);

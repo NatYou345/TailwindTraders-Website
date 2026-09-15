@@ -1,6 +1,6 @@
 import axios from 'axios'
-import toast from './toast'
-import { handleUnathenticatedRequest } from './refreshJWTHelper'
+import toast from './toast.js'
+import { handleUnathenticatedRequest } from './refreshJWTHelper.js'
 
 
 function errorResponseHandler(error) {

@@ -1,18 +1,21 @@
+@use "../abstracts/mixins/font-placeholders";
+@use "../abstracts/variables";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the Filter component of the site/application.
 // -----------------------------------------------------------------------------
 .filter {
-    font-weight: $font-weight-medium;
-    color: $color-text-primary;
+    font-weight: variables.$font-weight-medium;
+    color: variables.$color-text-primary;
 
     &__title {
-        @include text-s();
-        margin-bottom: $margin-l;
+        @include font-placeholders.text-s();
+        margin-bottom: variables.$margin-l;
     }
 
     &__item {
-        font-weight: $font-weight-light;
-        margin-bottom: $margin-m;
+        font-weight: variables.$font-weight-light;
+        margin-bottom: variables.$margin-m;
 
         // Base for label styling
         [type="checkbox"]:not(:checked),
@@ -30,24 +33,24 @@
         // Checkbox aspect
         [type="checkbox"]:not(:checked) + label:before,
         [type="checkbox"]:checked + label:before {
-            background: $color-background-medium;
+            background: variables.$color-background-medium;
             border-radius: 2px;
             content: "";
-            height: $checkbox-size;
+            height: variables.$checkbox-size;
             left: 0;
             position: absolute;
             top: 0;
-            width: $checkbox-size;
+            width: variables.$checkbox-size;
         }
 
         [type="checkbox"]:checked + label:before {
-            background: $color-background-primary;
+            background: variables.$color-background-primary;
         }
 
         // Checked mark aspect
         [type="checkbox"]:not(:checked) + label:after,
         [type="checkbox"]:checked + label:after {
-            color: $color-text-medium;
+            color: variables.$color-text-medium;
             content: "✓";
             left: 0.22rem;
             position: absolute;
@@ -70,14 +73,14 @@
         [type="checkbox"]:checked:focus + label:before,
         [type="checkbox"]:not(:checked):focus + label:before,
         label:hover:before {
-            border: 2px solid $color-element-hover;
+            border: 2px solid variables.$color-element-hover;
         }
     }
 
     &__more {
-        @include text-xs();
-        color: $color-text-secondary;
-        font-weight: $font-weight-medium;
+        @include font-placeholders.text-xs();
+        color: variables.$color-text-secondary;
+        font-weight: variables.$font-weight-medium;
         margin-bottom: 3rem;
         margin-top: 1.5rem;
     }
